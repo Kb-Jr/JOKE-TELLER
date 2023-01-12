@@ -6,18 +6,20 @@ function toggleButton(){
     button.disabled = !button.disabled;
 }
 
+
 function tellMe(joke){
     VoiceRSS.speech({
-        key: '6b779644b0464f8886a64eb54e079760',
+        key: '',
         src: joke,
         hl: 'en-us',
-        v: 'Linda',
+        v: 'Amy',
         r: 0, 
         c: 'mp3',
         f: '44khz_16bit_stereo',
         ssml: false
     });
 }
+
 
 async function getJokes(){
     let joke = '';
@@ -41,6 +43,7 @@ async function getJokes(){
 
     
 }
+
 
 button.addEventListener('click', getJokes);
 audioElement.addEventListener('ended', toggleButton);

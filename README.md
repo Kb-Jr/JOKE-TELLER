@@ -1,59 +1,41 @@
 # JOKE TELLER
-
-
-<!-- # Random quotes generator
- Generate random quotes and share to Twitter
-
+Tell a joke from the click of a button!
 
 # About
-A single web page to generate and display a Random quote fetched from a quotes API by clicking a button and also share on Twitter if logged in.
+A single web page that tells a joke from the click of a button. Jokes are generated from a Jokes API and are told via a text to speech API
 
 ## Table of contents
-
   - [Screenshot](#screenshot)
-  - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
+- [NB](#NB)
+- [Acknowledgement](#acknowledgement)
 
 
 ### Screenshot
+![Desktop screenshot](./Desktop-active.png)
+![Desktop screenshot](./Desktop-inactive.png)
+![Mobile screenshot](./mobile-active.png)
+![Mobile screenshot](./mobile-inactive.png)
 
-![Desktop screenshot](./Desktop-1.png)
-![Desktop screenshot](./Desktop-2.png)
-![Mobile screenshot](./Mobile-Ipad.png)
-
-
-### Links
-
-- Live Site URL: [Click here](https://kb-jr.github.io/Random-quotes-generator/)
 
 ## My process
-
-#### Interface:
-- Build User interface using HTML5 and CSS custom properties.
-- Create loader animation using CSS animations
-- Import font type from Google fonts API
-- Import icons like Quote icon and twitter icon from Fontawesome
-
-#### Behavior:
-- Create an asynchronous function to retrieve quotes from the Quotes API. This is done by fetching data from the API url in JSON format. This returns an array of several objects with text and author properties.
-
-- Create a function to generate a new random quote and dynamically populate the interface with quotes and Authors. This is done by using the 'math.random' method on the quotes object retrieevd from the API and storing the result quote in a variable. The quote text property is then used to update the text content of the field created for quotes in the interface (Apply same step to retrieve quote authors and update the interface). Additional conditions are also added to manioulate the contents being displayed such as the font size and placeholder text in the event that an author is not available. This is done using if else statements.
-
-- Create a function to share quote directly to twitter. Do this by storing the twitter sharing link and passing in the content to be shared as a text parameter using template literal syntax in a variable. Template literal syntax allows you to pass in variables as string format. Open the variable using window.open and specify '_blank' in order for twitter to open in a new tab.
-
-- Add eevnt listeners to the new quote and tweet buttons such that when clicked, the new quote and tweet quote functions will be run respectively.
+- Create an Asynchronous function to retrieve jokes.
+- In this function create a variable and store the URL of the Jokes APi in it
+- In a 'try' statement, 'fetch' contents from the Jokes API then convert these contents to JSON format using the .json() method. The content returned in json format is the Joke object.
+- Use a conditional statement to determine what the joke should be made up of, depending on if it's a single joke or a two part joke.
+- Call the function to tell the jokes and call the toggleButton function, still in the 'try' statement.
+- Create a function to tell the jokes. This function will take the Joke object variable created in the asynchronous function to retrieve jokes as input. That way the joke object is available to this function.
+- The code block of the function contains key parameters required for the text to speech to work as desired. The VoiceRSS variable is created in an SDK file downloaded from the VoiceRSS site. The SDK file contains minified JS code which was used to create the VoiceRSS variable.
+- Add an event listener to the button such that when the 'click' event fires, the function to retrieve jokes is called.
 
 
 
 ### Built with
-
 - HTML5 
-- CSS custom properties
+- CSS3 custom properties
 - Flexbox
 - Javascript
 - Desktop-first workflow
@@ -61,18 +43,23 @@ A single web page to generate and display a Random quote fetched from a quotes A
 
 ### Useful resources
 
-- [api for quotes](https://type.fit/api/quotes) - This link is an API which contains an array of several quotes.
+- [Jokes API](https://sv443.net/jokeapi/v2/) - This resource creates an API link you can use to generate jokes per the filters you select.
 
-- [url to share on twitter](https:twitter.com/intent/tweet) - Use this link in addition with other query parameters to share specified content to twitter. For more info on query parameters, visit https://developer.twitter.com/en/docs/twitter-for-websites/tweet-button/guides/web-intent.
+- [text to speech SDK](https://www.voicerss.org/sdk/javascript.aspx) - Download and use the minified code which defines the VoiceRSS variable. The speech property of the Voice RSS code can also be copied from this page and pasted as the code block in the Joke telling function. Here the source can be set to the joke variable and the value of the other parameters can also be tweaked.
 
-- [to create a loader](https://www.w3schools.com/howto/howto_css_loader.asp) - Code snippets from here was used to build a customized loader
-
-- [fontawesome](https://kit.fontawesome.com/61ca9c0951.js) - Adding this link to the head section of the HTML grants one access to use some free icons delivered from Fontawesome. What is needed is to include the appropriate HTML code for the required icon. 
-
-- [Google fonts](https://fonts.googleapis.com/css?family=Ubuntu) - Adding this link to the head section of the HTML grants one access to use the 'Ubuntu' font from google fonts. To use any other font, replace 'Ubuntu' with prefered font type or family in the link.
+- [Voice RSS site](https://www.voicerss.org/) - Create an account and an API key will be assigned to you. Different plans are available.
 
 
 ## Author
 
 - Github - [@Kb-Jr](https://github.com/Kb-Jr)
-- Twitter - [@Joker__XL](https://www.twitter.com/Joker__XL) -->
+- Twitter - [@Joker__XL](https://www.twitter.com/Joker__XL)
+
+
+## NB
+- To use this code successfully, An API Key will neeed to be generated and inserted as a string in the script.js file.
+
+## Acknowledgement
+-  Jacinto Wong
+
+
