@@ -9,7 +9,7 @@ function toggleButton(){
 
 function tellMe(joke){
     VoiceRSS.speech({
-        key: '',
+        key: '6b779644b0464f8886a64eb54e079760',
         src: joke,
         hl: 'en-us',
         v: 'Amy',
