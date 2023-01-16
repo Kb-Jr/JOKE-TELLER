@@ -62,4 +62,8 @@ A single web page that tells a joke from the click of a button. Jokes are genera
 ## Acknowledgement
 -  Jacinto Wong
 
+## Live Link
+
+- [Live Link](https://kb-jr.github.io/JOKE-TELLER/)
+
 
